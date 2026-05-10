@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Bae – कैफे बे | Jaipur's Beloved Café</title>
+  <meta name="description" content="Café Bae (कैफे बे) – A cozy café in C Scheme, Jaipur. Breakfast, Continental & Asian fare. Rated 4.4 ⭐ on Google. Open from 8 AM." />
+
+  <!-- Schema.org LocalBusiness markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Café Bae",
+    "alternateName": "कैफे बे",
+    "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200",
+    "url": "https://maps.app.goo.gl/vuPp3JDkQHGUFWCUA",
+    "telephone": "+91-0141-274-4131",
+    "priceRange": "₹400–₹1,400",
+    "servesCuisine": ["Breakfast", "Continental", "Asian"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4",
+      "reviewCount": "3665"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "A/1, 21, Sahkar Marg, Circle, near 22 Godown, C Scheme",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302006",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Su 08:00-22:00",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Family-friendly", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Outdoor seating", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Drive-through", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "No-contact delivery", "value": true}
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── CSS Variables ── */
+    :root {
+      --terra:    #C1603A;
+      --terra-dk: #9E4928;
+      --cream:    #F7F0E6;
+      --warm-bg:  #FBF6EF;
+      --olive:    #6B7B4E;
+      --olive-lt: #8D9E6A;
+      --brown:    #4A3728;
+      --brown-lt: #7A5C44;
+      --sand:     #E8D9C4;
+      --text:     #2E1F14;
+      --muted:    #7A6A5A;
+      --gold:     #D4A853;
+      --teal:     #3D7B78;
+      --white:    #FFFDF9;
+      --radius:   14px;
+      --shadow:   0 8px 40px rgba(74,55,40,0.12);
+      --shadow-sm:0 3px 12px rgba(74,55,40,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(251,246,239,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(193,96,58,0.12);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(74,55,40,0.10); }
+
+    .nav-logo {
+      display: flex; flex-direction: column; line-height: 1;
+    }
+    .nav-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--terra);
+    }
+    .nav-logo span:last-child {
+      font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--brown-lt);
+      font-size: 0.88rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terra); }
+
+    .nav-cta {
+      background: var(--terra); color: var(--white);
+      border: none; padding: 0.55rem 1.3rem;
+      border-radius: 50px; font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--terra-dk); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding-top: 72px;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--brown);
+      padding: 0.35rem 0.9rem; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600;
+      margin-bottom: 1.5rem; width: fit-content;
+      box-shadow: 0 2px 10px rgba(212,168,83,0.35);
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.05; color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+    .hero-title em { color: var(--terra); font-style: italic; }
+
+    .hero-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; color: var(--muted);
+      letter-spacing: 0.06em; margin-bottom: 0.3rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem; color: var(--brown-lt);
+      line-height: 1.6; max-width: 460px; margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex; align-items: center; gap: 1.5rem;
+      margin-bottom: 2.5rem; flex-wrap: wrap;
+    }
+
+    .rating-pill {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--white); border: 1px solid var(--sand);
+      padding: 0.5rem 1rem; border-radius: 50px;
+      box-shadow: var(--shadow-sm);
+    }
+    .rating-pill .stars { color: var(--gold); font-size: 1rem; }
+    .rating-pill .score { font-weight: 700; color: var(--brown); font-size: 1.05rem; }
+    .rating-pill .count { font-size: 0.78rem; color: var(--muted); }
+
+    .price-pill {
+      display: flex; flex-direction: column;
+    }
+    .price-pill .price { font-weight: 700; color: var(--olive); font-size: 1rem; }
+    .price-pill .price-note { font-size: 0.72rem; color: var(--muted); }
+
+    .hero-ctas {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--terra); color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(193,96,58,0.35);
+      transition: all 0.25s;
+    }
+    .btn-primary:hover {
+      background: var(--terra-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(193,96,58,0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--terra);
+      padding: 0.85rem 2rem; border-radius: 50px;
+      border: 2px solid var(--terra);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover {
+      background: var(--terra);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Hero right – image mosaic */
+    .hero-right {
+      position: relative; overflow: hidden;
+      background: var(--sand);
+    }
+
+    .hero-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 100%; gap: 4px;
+    }
+
+    .mosaic-img {
+      overflow: hidden; position: relative;
+    }
+    .mosaic-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .mosaic-img:hover img { transform: scale(1.05); }
+    .mosaic-img:first-child {
+      grid-row: span 2;
+    }
+
+    .hero-overlay-tag {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: rgba(251,246,239,0.95);
+      border-radius: 10px; padding: 0.7rem 1rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--brown);
+      box-shadow: var(--shadow-sm);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+
+    /* ── DECORATIVE DIVIDER ── */
+    .divider {
+      width: 100%; overflow: hidden;
+      line-height: 0;
+    }
+    .divider svg { display: block; }
+
+    /* ── SECTION COMMON ── */
+    .section { padding: 6rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--brown);
+      line-height: 1.2;
+    }
+    .section-desc {
+      color: var(--muted); font-size: 1rem;
+      max-width: 560px; margin: 0.75rem auto 0;
+      line-height: 1.7;
+    }
+
+    /* Decorative underline */
+    .fancy-underline {
+      position: relative; display: inline-block;
+    }
+    .fancy-underline::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terra), var(--gold));
+      border-radius: 2px;
+    }
+
+    /* ── ABOUT / HIGHLIGHTS ── */
+    .about-section { background: var(--white); }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .highlight-card {
+      background: var(--warm-bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--sand);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-icon {
+      font-size: 2.5rem; margin-bottom: 1rem;
+      display: block;
+    }
+
+    .highlight-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--brown); margin-bottom: 0.4rem;
+    }
+    .highlight-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+    /* About text block */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      margin-bottom: 5rem;
+    }
+
+    .about-text h2 {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--brown); line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .about-text p {
+      color: var(--muted); line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-img {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+    }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── MENU / DISHES ── */
+    .menu-section { background: var(--cream); }
+
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .dish-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .dish-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .dish-img {
+      height: 160px; overflow: hidden;
+      position: relative; background: var(--sand);
+    }
+    .dish-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .dish-card:hover .dish-img img { transform: scale(1.08); }
+
+    .dish-tag {
+      position: absolute; top: 0.6rem; right: 0.6rem;
+      background: var(--olive); color: var(--white);
+      font-size: 0.65rem; font-weight: 600;
+      padding: 0.2rem 0.5rem; border-radius: 50px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    .dish-body {
+      padding: 1rem;
+    }
+    .dish-body h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem; font-weight: 600;
+      color: var(--brown); line-height: 1.3;
+    }
+    .dish-emoji {
+      font-size: 1.2rem; margin-bottom: 0.3rem;
+    }
+
+    /* Bestseller badge */
+    .popular-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--terra), var(--gold));
+      color: var(--white); font-size: 0.65rem; font-weight: 700;
+      padding: 0.18rem 0.55rem; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-top: 0.4rem;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section { background: var(--brown); color: var(--cream); }
+    .reviews-section .section-label { color: var(--gold); }
+    .reviews-section .section-title { color: var(--white); }
+    .reviews-section .section-desc { color: rgba(247,240,230,0.7); }
+
+    .rating-hero {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .rating-big { text-align: center; }
+    .rating-big .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .rating-big .stars-row { font-size: 1.6rem; color: var(--gold); }
+    .rating-big .label { font-size: 0.82rem; color: rgba(247,240,230,0.6); margin-top: 0.2rem; }
+
+    .rating-bars { flex: 1; max-width: 280px; }
+    .bar-row {
+      display: flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 0.4rem;
+    }
+    .bar-row span:first-child { font-size: 0.78rem; color: var(--gold); min-width: 30px; }
+    .bar-track {
+      flex: 1; height: 6px; background: rgba(255,255,255,0.15);
+      border-radius: 3px; overflow: hidden;
+    }
+    .bar-fill { height: 100%; background: var(--gold); border-radius: 3px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius); padding: 1.8rem;
+      transition: background 0.25s;
+    }
+    .review-card:hover { background: rgba(255,255,255,0.11); }
+
+    .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; }
+
+    .review-text {
+      font-size: 0.9rem; line-height: 1.7;
+      color: rgba(247,240,230,0.85);
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .reviewer {
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .reviewer-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--terra), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; color: var(--white);
+      flex-shrink: 0;
+    }
+    .reviewer-name { font-weight: 600; font-size: 0.88rem; color: var(--white); }
+    .reviewer-date { font-size: 0.75rem; color: rgba(247,240,230,0.5); }
+
+    /* ── LOCATION & HOURS ── */
+    .location-section { background: var(--warm-bg); }
+
+    .location-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: start;
+    }
+
+    .location-info h2 {
+      font-size: 2rem; color: var(--brown); margin-bottom: 2rem;
+    }
+
+    .info-item {
+      display: flex; gap: 1rem; margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .info-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--terra); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(193,96,58,0.3);
+    }
+    .info-content { flex: 1; }
+    .info-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .info-value { color: var(--brown); font-weight: 500; font-size: 0.95rem; line-height: 1.5; }
+    .info-value a { color: var(--terra); text-decoration: none; }
+    .info-value a:hover { text-decoration: underline; }
+
+    .hours-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 2rem; margin-top: 0.5rem;
+    }
+    .hour-row {
+      display: flex; justify-content: space-between;
+      font-size: 0.85rem; padding: 0.3rem 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .hour-row .day { color: var(--muted); }
+    .hour-row .time { color: var(--brown); font-weight: 500; }
+
+    .open-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #e8f5e9; color: #2e7d32;
+      padding: 0.3rem 0.8rem; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .open-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #2e7d32;
+      animation: pulse-green 1.5s infinite;
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .map-container {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 420px;
+    }
+    .map-container iframe {
+      width: 100%; height: 100%; border: none;
+    }
+
+    /* Directions button */
+    .directions-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--teal); color: var(--white);
+      padding: 0.75rem 1.5rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.88rem;
+      margin-top: 1.5rem;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(61,123,120,0.3);
+    }
+    .directions-btn:hover {
+      background: #2d5f5c; transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown);
+      color: rgba(247,240,230,0.7);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: var(--gold); margin-bottom: 0.25rem;
+    }
+    .footer-brand .logo-hi {
+      font-size: 0.85rem; color: rgba(247,240,230,0.5);
+      margin-bottom: 0.9rem; display: block;
+    }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+
+    .footer-col h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul a {
+      color: rgba(247,240,230,0.7); text-decoration: none;
+      font-size: 0.88rem; transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--white); }
+
+    .social-links {
+      display: flex; gap: 0.8rem; margin-top: 1.2rem;
+    }
+    .social-btn {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); text-decoration: none;
+      font-size: 1rem; transition: background 0.2s, transform 0.2s;
+    }
+    .social-btn:hover { background: var(--terra); transform: translateY(-2px); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: gap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-bottom a { color: var(--gold); text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+    .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .fade-up:nth-child(5) { transition-delay: 0.4s; }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — Full device coverage
+       xs:  < 375px  (small phones: iPhone SE)
+       sm:  375–480px (standard phones: iPhone 14, Galaxy S)
+       md:  481–768px (large phones, small tablets)
+       lg:  769–1024px (tablets: iPad, Galaxy Tab)
+       xl:  1025–1280px (laptops, large tablets landscape)
+       2xl: > 1280px  (desktops, large laptops)
+    ══════════════════════════════════════════════ */
+
+    /* ── Base: fluid type & spacing ── */
+    html { font-size: clamp(14px, 1.5vw, 16px); }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── Hamburger (hidden on desktop) ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--brown); border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── Mobile menu ── */
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 65px; left: 0; right: 0; z-index: 99;
+      background: var(--white);
+      padding: 1.5rem 2rem;
+      box-shadow: var(--shadow);
+      flex-direction: column; gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none; color: var(--brown);
+      font-weight: 500; padding: 0.9rem 0;
+      border-bottom: 1px solid var(--sand);
+      font-size: 1rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ════════════════════
+       LARGE TABLETS / LAPTOPS  (769px – 1024px)
+    ════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-left { padding: 4rem 3rem 4rem 3.5rem; }
+      .hero-title { font-size: clamp(2.4rem, 4vw, 3.5rem); }
+      .about-inner { gap: 3rem; }
+      .footer-top { grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
+      .dishes-grid { grid-template-columns: repeat(3, 1fr); }
+      .highlights-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ════════════════════
+       TABLETS  (481px – 768px)  iPad mini, Galaxy Tab, iPad Air
+    ════════════════════ */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-cta { padding: 0.45rem 1rem; font-size: 0.8rem; }
+      nav { padding: 0.9rem 1.5rem; }
+
+      /* Hero */
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 65px;
+      }
+      .hero-left {
+        padding: 3rem 2.5rem 2.5rem;
+        text-align: center;
+        align-items: center;
+      }
+      .hero-title { font-size: clamp(2rem, 5vw, 3rem); }
+      .hero-tagline { max-width: 100%; font-size: 1rem; }
+      .hero-meta { justify-content: center; }
+      .hero-ctas { justify-content: center; }
+      .hero-right { height: 320px; }
+      .hero-badge { font-size: 0.78rem; }
+
+      /* Sections */
+      .section { padding: 4rem 1.5rem; }
+      .section-header { margin-bottom: 2.5rem; }
+
+      /* About */
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+      .about-text .btn-primary { margin: 0.5rem auto 0; }
+      .about-img { aspect-ratio: 16/9; }
+
+      /* Highlights */
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+      /* Menu */
+      .dishes-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+      /* Reviews */
+      .rating-hero { flex-direction: column; align-items: center; gap: 1.5rem; }
+      .rating-bars { max-width: 100%; width: 100%; }
+      .reviews-grid { grid-template-columns: 1fr; }
+
+      /* Location */
+      .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .map-container { height: 320px; }
+      .hours-grid { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+    }
+
+    /* ════════════════════
+       LARGE PHONES  (376px – 480px)  iPhone 14 Pro Max, Galaxy S Ultra
+    ════════════════════ */
+    @media (max-width: 480px) {
+      nav { padding: 0.8rem 1rem; }
+      .nav-logo span:first-child { font-size: 1.2rem; }
+      .nav-logo span:last-child { display: none; }
+      .mobile-menu { top: 58px; }
+
+      .hero-left { padding: 2.5rem 1.2rem 2rem; }
+      .hero-title { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+      .hero-tagline { font-size: 0.92rem; }
+      .hero-right { height: 260px; }
+      .hero-overlay-tag { font-size: 0.72rem; padding: 0.5rem 0.75rem; bottom: 0.8rem; left: 0.8rem; }
+
+      .btn-primary, .btn-secondary {
+        padding: 0.75rem 1.4rem;
+        font-size: 0.88rem;
+        width: 100%;
+        justify-content: center;
+      }
+      .hero-ctas { flex-direction: column; width: 100%; }
+
+      .section { padding: 3rem 1rem; }
+      .section-title { font-size: 1.7rem; }
+
+      .highlights-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .highlight-card { padding: 1.2rem 1rem; }
+      .highlight-icon { font-size: 2rem; }
+
+      .dishes-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .dish-img { height: 120px; }
+      .dish-body { padding: 0.7rem; }
+      .dish-body h3 { font-size: 0.8rem; }
+
+      .rating-big .num { font-size: 4rem; }
+      .review-text { font-size: 0.85rem; }
+
+      .info-item { gap: 0.8rem; }
+      .info-icon { width: 36px; height: 36px; font-size: 0.95rem; border-radius: 8px; }
+      .map-container { height: 260px; border-radius: 14px; }
+
+      .directions-btn { width: 100%; justify-content: center; }
+
+      .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+      footer { padding: 2.5rem 1rem 1.5rem; }
+      .footer-brand .logo { font-size: 1.5rem; }
+    }
+
+    /* ════════════════════
+       SMALL PHONES  (< 375px)  iPhone SE, older Androids
+    ════════════════════ */
+    @media (max-width: 374px) {
+      .hero-title { font-size: 1.7rem; }
+      .hero-badge { font-size: 0.7rem; padding: 0.28rem 0.7rem; }
+      .rating-pill { flex-wrap: wrap; justify-content: center; }
+      .btn-primary, .btn-secondary { font-size: 0.82rem; padding: 0.7rem 1rem; }
+
+      .highlights-grid { grid-template-columns: 1fr; }
+      .dishes-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+      .dish-img { height: 100px; }
+
+      .adm-row { flex-direction: column; }
+      .section { padding: 2.5rem 0.8rem; }
+      .section-title { font-size: 1.5rem; }
+      .hero-right { height: 220px; }
+    }
+
+    /* ════════════════════
+       LANDSCAPE PHONES  (short + wide)
+    ════════════════════ */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        min-height: auto;
+        padding-top: 58px;
+      }
+      .hero-left { padding: 2rem 2rem 2rem 2.5rem; }
+      .hero-title { font-size: 1.8rem; }
+      .hero-right { height: auto; min-height: 260px; }
+      .hero-badge { margin-bottom: 0.8rem; }
+      .hero-tagline { margin-bottom: 1rem; font-size: 0.88rem; }
+      .hero-meta { margin-bottom: 1.2rem; }
+      nav { padding: 0.6rem 1.5rem; }
+    }
+
+    /* ════════════════════
+       LARGE DESKTOPS  (> 1440px)
+    ════════════════════ */
+    @media (min-width: 1440px) {
+      .container { max-width: 1340px; }
+      .hero-left { padding: 6rem 5rem 6rem 6rem; }
+      .hero-title { font-size: 5rem; }
+      .dishes-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+
+    /* ════════════════════
+       TOUCH DEVICE TWEAKS
+    ════════════════════ */
+    @media (hover: none) and (pointer: coarse) {
+      .btn-primary:hover, .btn-secondary:hover,
+      .highlight-card:hover, .dish-card:hover,
+      .social-btn:hover, .nav-cta:hover {
+        transform: none;
+      }
+      .dish-card:active { transform: scale(0.98); }
+      .btn-primary:active { opacity: 0.85; }
+      .btn-secondary:active { background: var(--terra); color: var(--white); }
+    }
+
+    /* ════════════════════
+       PRINT
+    ════════════════════ */
+    @media print {
+      nav, .hero-right, .mobile-menu, #admin-overlay, #site-banner,
+      .hero-ctas, footer .social-links { display: none !important; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .section { padding: 2rem 1rem; }
+      body { background: white; color: black; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span>Café Bae</span>
+    <span>कैफे बे · Jaipur</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Visit Us</a></li>
+  </ul>
+
+  <a href="tel:01412744131" class="nav-cta">📞 Call Us</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#menu" onclick="closeMobileMenu()">Menu</a>
+  <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#location" onclick="closeMobileMenu()">Visit Us</a>
+  <a href="tel:01412744131" onclick="closeMobileMenu()">📞 0141 274 4131</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge" id="pub-hero-badge">
+      ⭐ 4.4 &nbsp;·&nbsp; Google's Favourite Café in C Scheme
+    </div>
+
+    <h1 class="hero-title" id="pub-hero-title">
+      Where Every<br/><em>Sip & Bite</em><br/>Feels Like Home
+    </h1>
+    <p class="hero-subtitle">कैफे बे</p>
+
+    <p class="hero-tagline" id="pub-hero-tagline">
+      Breakfast, Continental & Asian flavours crafted with love — in the heart of Jaipur's vibrant C Scheme.
+    </p>
+
+    <div class="hero-meta">
+      <div class="rating-pill">
+        <span class="stars">★★★★★</span>
+        <span class="score" id="pub-rating">4.4</span>
+        <span class="count">/ 5 &nbsp;(<span id="pub-review-count">3,665</span> reviews)</span>
+      </div>
+      <div class="price-pill">
+        <span class="price" id="pub-price">₹400 – ₹1,400 per person</span>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="tel:01412744131" class="btn-primary" id="pub-cta-reserve">🍽️ Reserve a Table</a>
+      <a href="https://www.swiggy.com/city/jaipur/stepout-cafe-sehdev-marg-c-scheme-rest44653?is_retargeting=true&media_source=GooglePlaceOrder" target="_blank" rel="noopener" class="btn-secondary" id="pub-cta-order">🛵 Order on Swiggy</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-mosaic">
+      <div class="mosaic-img">
+        <img src="https://lh3.googleusercontent.com/svVH-47Wn8bp51cm6zLcePlXMx98REmK-3TE1FPFXIcDCio6xPQb5RwNtndSgDK_HofyFn_OSpmlRxZLB_tJ5-lSh3NM=w1600-rw" alt="Café Bae — C Scheme Jaipur" loading="eager" />
+        <div class="hero-overlay-tag">☀️ Open from 8 AM Daily</div>
+      </div>
+      <div class="mosaic-img">
+        <img src="https://lh3.googleusercontent.com/iCi2KxIps0GNj5HApnD_Aln12RWIqyNoNLU3E37XTQ1EaOF-gU4_YH-mdKMgUHbASAf1LY5rqXNnnLnF4a12zDSbYms=w800-rw" alt="Food at Café Bae" loading="eager" />
+      </div>
+      <div class="mosaic-img">
+        <img src="https://lh3.googleusercontent.com/8ZS-loTef1ekztdcO-w8uljkFSMUpMxrLhx9FBQmXLBtz1ZpvzuBoy0Iyc8rCsz3ZfrWvImZRKeJvqMQKCldq-TOQ5KG=w800-rw" alt="Café Bae ambience" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT / HIGHLIGHTS ── -->
+<section class="section about-section" id="about">
+  <div class="container">
+
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-label">Our Story</p>
+        <h2>A Café Made for<br/><span class="fancy-underline">Every Moment</span></h2>
+        <p id="pub-about-text">Café Bae (कैफे बे) is Jaipur's warm corner where conversations flow freely, coffee is always fresh, and the food feels like a hug. Nestled in the leafy lanes of C Scheme, we've been the breakfast spot, the meeting point, and the weekend retreat for thousands of happy guests.</p>
+        <p>From a lazy Sunday Breakfast to a chilled Watermelon Mojito on a warm afternoon — everything here is crafted with care by our talented kitchen team.</p>
+        <a href="#menu" class="btn-primary" style="width:fit-content; margin-top:0.5rem;">
+          Explore Our Menu →
+        </a>
+      </div>
+      <div class="about-img">
+        <img src="https://lh3.googleusercontent.com/QMBuwgSw1domq3jO0ZmQcv_cqNAIV5qFhNGVPUEQ8ShZLnUVwqKe_eQenWQOk5bizC5lVRG8tDCf8vfEy_oeTfK55rw=w800-rw" alt="Café Bae interior ambience" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="section-header">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Crafted for Your Comfort</h2>
+      <p class="section-desc">Every visit to Café Bae is designed to be effortless, warm, and memorable.</p>
+    </div>
+
+    <div class="highlights-grid">
+      <div class="highlight-card fade-up">
+        <span class="highlight-icon">👨‍👩‍👧‍👦</span>
+        <h3>Family-Friendly</h3>
+        <p>A welcoming space for the whole family — kids, parents, grandparents alike love it here.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <span class="highlight-icon">🌿</span>
+        <h3>Outdoor Seating</h3>
+        <p>Enjoy fresh Jaipur air with our beautiful outdoor seating area — perfect for the mornings.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <span class="highlight-icon">🚗</span>
+        <h3>Drive-Through</h3>
+        <p>In a hurry? Our drive-through lets you grab your favourite snacks without stepping out.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <span class="highlight-icon">🛵</span>
+        <h3>No-Contact Delivery</h3>
+        <p>Enjoy Café Bae from the comfort of your home with our safe no-contact delivery service.</p>
+      </div>
+      <div class="highlight-card fade-up">
+        <span class="highlight-icon">🍽️</span>
+        <h3>Dine-In Experience</h3>
+        <p>Savour every dish in our thoughtfully designed interiors with warm, attentive service.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── MENU ── -->
+<section class="section menu-section" id="menu">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Popular Picks</p>
+      <h2 class="section-title">Our Most <span class="fancy-underline">Loved Dishes</span></h2>
+      <p class="section-desc">These are the crowd favourites — ordered again and again by our loyal guests.</p>
+    </div>
+
+    <div class="dishes-grid">
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/AKxLmrrTt9wnwO2KWuyJ1_sHfsQxLzUESDJo-9i5QN79voNUckAERwiFjHa8DSJ-GrnVBnA__8BlWyPOxa-_kBZTiw=w600-rw" alt="Blueberry Cheesecake at Café Bae" loading="lazy" />
+          <span class="dish-tag">Dessert</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🫐</div>
+          <h3>Blueberry Cheesecake</h3>
+          <span class="popular-badge">🔥 Bestseller</span>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/Joy-V0OZc3yJ4pza5hP3JrnWIi895m8bsnfTviWFIBlmno8nAciMbbu2DA7_EUgG5huU_htz33EfZ5QxA9kWBqS5eFQo=w600-rw" alt="Cappuccino at Café Bae" loading="lazy" />
+          <span class="dish-tag">Beverage</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">☕</div>
+          <h3>Cappuccino</h3>
+          <span class="popular-badge">🔥 Bestseller</span>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/juIBG-1a_dcLrjMwPEibcfxedR3ZU_Ugw6CAcqEkSneVz6Ae1tTeuRgOFul7jCNXpu8enPcAHM3Wsqz-8QLiWPYITVxm=w600-rw" alt="Cheese Nachos Supremos at Café Bae" loading="lazy" />
+          <span class="dish-tag">Snack</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🧀</div>
+          <h3>Cheese Nachos Supremos</h3>
+          <span class="popular-badge">⭐ Fan Fave</span>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/bGQkchZB8KPsJPDafgAKnCNfH1w8TPsFOKhCy2NctDrICUynLgicgEyz_8MlYcq0aO1hlo56NnrR0io9TgwPY2iiM3o=w600-rw" alt="Sunday Breakfast at Café Bae" loading="lazy" />
+          <span class="dish-tag">Breakfast</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🍳</div>
+          <h3>Sunday Breakfast</h3>
+          <span class="popular-badge">🏆 Most Ordered</span>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/VRZwlmpLTCGwCOIkRQ8N4B68FkW_DY1dvSBKEgb1FvQYwUt7F_svgK2bQqcE7EZN5VOhBV1gFfryt4FIqOgi9kxHjic=w600-rw" alt="Mezze Platter at Café Bae" loading="lazy" />
+          <span class="dish-tag">Sharing</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🫙</div>
+          <h3>Mezze Platter</h3>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/n_Yvd1lhsZymY9FUqptJENR9FybP5FYJZNl4RGHZbPx0Ai3Wxv8ymbSMIWNLVPcP6ypmkF8E2Vjk_qw2HB_d-ATLjYc=w600-rw" alt="Belgium Chocolate Cake at Café Bae" loading="lazy" />
+          <span class="dish-tag">Dessert</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🍫</div>
+          <h3>Belgium Chocolate Cake</h3>
+          <span class="popular-badge">🔥 Bestseller</span>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/CSfbv1L2aSaSI2lGPKOwmmOMF29FucUmv03cqt9wGE9TOM60tLFjVTEqwW6okpxlaIGa1iJRy30FLpbcms8m46hvXA=w600-rw" alt="All Veggie Pizza at Café Bae" loading="lazy" />
+          <span class="dish-tag">Main</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🍕</div>
+          <h3>All Veggie Pizza</h3>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/m1eT-FOLCj98W3dfDtrmldHQr19avFEFzK0lw1MzKwicVF7bk5A-71xqdx34kGI0R-VEedTuFeaTs-HOPJTLxrhnvAE=w600-rw" alt="Masala Cheese Garlic Bread at Café Bae" loading="lazy" />
+          <span class="dish-tag">Snack</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🧄</div>
+          <h3>Masala Cheese Garlic Bread</h3>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/iCi2KxIps0GNj5HApnD_Aln12RWIqyNoNLU3E37XTQ1EaOF-gU4_YH-mdKMgUHbASAf1LY5rqXNnnLnF4a12zDSbYms=w600-rw" alt="Watermelon Mojito at Café Bae" loading="lazy" />
+          <span class="dish-tag">Beverage</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🍉</div>
+          <h3>Watermelon Mojito</h3>
+          <span class="popular-badge">⭐ Summer Hit</span>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up">
+        <div class="dish-img">
+          <img src="https://lh3.googleusercontent.com/8ZS-loTef1ekztdcO-w8uljkFSMUpMxrLhx9FBQmXLBtz1ZpvzuBoy0Iyc8rCsz3ZfrWvImZRKeJvqMQKCldq-TOQ5KG=w600-rw" alt="Cheese Cigarillos at Café Bae" loading="lazy" />
+          <span class="dish-tag">Starter</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">🥐</div>
+          <h3>Cheese Cigarillos</h3>
+          <span class="popular-badge">⭐ Fan Fave</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">What People Say</p>
+      <h2 class="section-title" style="color:var(--white)">Loved by Jaipur</h2>
+      <p class="section-desc">3,665 reviews and counting — here's what our guests love most.</p>
+    </div>
+
+    <div class="rating-hero">
+      <div class="rating-big">
+        <div class="num">4.4</div>
+        <div class="stars-row">★★★★★</div>
+        <div class="label">3,665 Google Reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="bar-row">
+          <span>5 ★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:68%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span>4 ★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:18%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The service is very prompt and the food is absolutely delicious. Special shoutout to Chef Gunjan and Chef Anurag — the Sunday Breakfast was everything. Gopal ji made us feel so welcome. This is our family's go-to spot in Jaipur!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">KK</div>
+          <div>
+            <div class="reviewer-name">Kriti Kanwar</div>
+            <div class="reviewer-date">Google Review · 5 ★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Café Bae is my weekend ritual. The Blueberry Cheesecake is hands down the best I've had in Rajasthan. The outdoor seating is so peaceful in the mornings. And the Watermelon Mojito — absolutely refreshing!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">RS</div>
+          <div>
+            <div class="reviewer-name">Riya Sharma</div>
+            <div class="reviewer-date">Google Review · 5 ★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">"Loved the Cheese Nachos Supremos and the Belgium Chocolate Cake — both are absolutely divine. Staff was courteous, the vibe is perfect for a catch-up with friends, and the coffee is always on point. Will keep coming back!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AM</div>
+          <div>
+            <div class="reviewer-name">Arjun Mehta</div>
+            <div class="reviewer-date">Google Review · 4 ★</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCATION & HOURS ── -->
+<section class="section location-section" id="location">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title">Visit <span class="fancy-underline">Café Bae</span></h2>
+      <p class="section-desc">Right in the heart of C Scheme, Jaipur. Come as you are.</p>
+    </div>
+
+    <div class="location-grid">
+      <div class="location-info">
+
+        <div class="info-item fade-up">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <div class="info-label">Address</div>
+            <div class="info-value" id="pub-address">
+              A/1, 21, Sahkar Marg, Circle, near 22 Godown,<br/>
+              C Scheme, Jaipur, Rajasthan 302006
+            </div>
+          </div>
+        </div>
+
+        <div class="info-item fade-up">
+          <div class="info-icon">📞</div>
+          <div class="info-content">
+            <div class="info-label">Phone</div>
+            <div class="info-value">
+              <a href="tel:01412744131" id="pub-phone">0141 274 4131</a>
+              &nbsp;<span style="font-size:0.78rem;color:var(--muted)">(Click to call)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-item fade-up">
+          <div class="info-icon">🕗</div>
+          <div class="info-content">
+            <div class="info-label">Opening Hours</div>
+            <div class="info-value">
+              <div class="open-badge">
+                <span class="dot"></span> Opens at 8 AM Daily
+              </div>
+              <div class="hours-grid" style="margin-top:0.8rem;">
+                <div class="hour-row"><span class="day">Mon–Fri</span><span class="time">8:00 AM – 10:00 PM</span></div>
+                <div class="hour-row"><span class="day">Saturday</span><span class="time">8:00 AM – 10:00 PM</span></div>
+                <div class="hour-row"><span class="day">Sunday</span><span class="time">8:00 AM – 10:00 PM</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <a href="https://maps.app.goo.gl/vuPp3JDkQHGUFWCUA" target="_blank" rel="noopener" class="directions-btn">
+          🗺️ Get Directions on Google Maps
+        </a>
+
+      </div>
+
+      <div class="map-container fade-up">
+        <iframe
+          title="Café Bae Location Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.4!2d75.8083!3d26.9157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db1a07b2a5555%3A0x5b7b7b7b7b7b7b7b!2sCafe%20Bae!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="logo">Café Bae</div>
+        <span class="logo-hi">कैफे बे · C Scheme, Jaipur</span>
+        <p>Your favourite corner café in Jaipur — where every table has a story, and every dish is made with love. Open daily from 8 AM.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" class="social-btn" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#location">Find Us</a></li>
+          <li><a href="tel:01412744131">Call Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>We Offer</h4>
+        <ul>
+          <li><a href="#">Dine-In</a></li>
+          <li><a href="#">Outdoor Seating</a></li>
+          <li><a href="#">Drive-Through</a></li>
+          <li><a href="https://www.swiggy.com/city/jaipur/stepout-cafe-sehdev-marg-c-scheme-rest44653?is_retargeting=true&media_source=GooglePlaceOrder" target="_blank" rel="noopener">No-Contact Delivery</a></li>
+          <li><a href="#">Family Dining</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p id="pub-copyright">© 2025 Café Bae (कैफे बे). All rights reserved. · C Scheme, Jaipur, Rajasthan.</p>
+      <p>
+        <a href="https://maps.app.goo.gl/vuPp3JDkQHGUFWCUA" target="_blank" rel="noopener">Suggest an Edit</a>
+        &nbsp;·&nbsp;
+        <a href="https://maps.app.goo.gl/vuPp3JDkQHGUFWCUA" target="_blank" rel="noopener">View on Google Maps</a>
+        &nbsp;·&nbsp;
+        <a href="#" id="admin-trigger" style="color:rgba(255,255,255,0.15);font-size:0.72rem;" title="Admin">⚙</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════
+     ADMIN PANEL — hidden overlay
+════════════════════════════════════════════ -->
+<div id="admin-overlay" style="display:none;">
+  <!-- Login Screen -->
+  <div id="admin-login">
+    <div class="adm-login-card">
+      <div class="adm-logo">
+        <span>☕</span>
+        <h2>Café Bae Admin</h2>
+        <p>Sign in to manage your website</p>
+      </div>
+      <div class="adm-field">
+        <label>Username</label>
+        <input type="text" id="adm-user" placeholder="admin" autocomplete="username" />
+      </div>
+      <div class="adm-field">
+        <label>Password</label>
+        <div style="position:relative">
+          <input type="password" id="adm-pass" placeholder="••••••••" autocomplete="current-password" />
+          <button class="adm-eye" onclick="togglePass()" tabindex="-1">👁</button>
+        </div>
+      </div>
+      <p id="adm-error" style="color:#e53935;font-size:0.82rem;margin-top:0.25rem;display:none;">Incorrect username or password.</p>
+      <button class="adm-btn-login" onclick="adminLogin()">Sign In →</button>
+      <button class="adm-close-btn" onclick="closeAdmin()">✕ Cancel</button>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="admin-dashboard" style="display:none;">
+    <aside class="adm-sidebar">
+      <div class="adm-sidebar-logo">
+        <span>☕</span>
+        <div>
+          <strong>Café Bae</strong>
+          <small>Admin Panel</small>
+        </div>
+      </div>
+      <nav class="adm-nav">
+        <button class="adm-nav-btn active" onclick="showTab('hero')">🏠 Hero Section</button>
+        <button class="adm-nav-btn" onclick="showTab('about')">📖 About</button>
+        <button class="adm-nav-btn" onclick="showTab('menu')">🍽️ Menu Items</button>
+        <button class="adm-nav-btn" onclick="showTab('reviews')">⭐ Reviews</button>
+        <button class="adm-nav-btn" onclick="showTab('contact')">📍 Contact & Hours</button>
+        <button class="adm-nav-btn" onclick="showTab('banner')">📣 Announcement</button>
+        <button class="adm-nav-btn" onclick="showTab('settings')">⚙️ Settings</button>
+      </nav>
+      <div class="adm-sidebar-footer">
+        <button class="adm-logout" onclick="adminLogout()">↩ Sign Out</button>
+      </div>
+    </aside>
+
+    <main class="adm-main">
+      <header class="adm-topbar">
+        <div>
+          <h3 id="adm-tab-title">Hero Section</h3>
+          <p id="adm-tab-sub">Edit your homepage headline and CTAs</p>
+        </div>
+        <div class="adm-topbar-actions">
+          <span class="adm-save-status" id="adm-save-status"></span>
+          <button class="adm-btn-save" onclick="saveAll()">💾 Save Changes</button>
+          <button class="adm-btn-preview" onclick="closeAdmin()">👁 View Site</button>
+        </div>
+      </header>
+
+      <!-- TAB: HERO -->
+      <div class="adm-tab active" id="tab-hero">
+        <div class="adm-card">
+          <h4 class="adm-card-title">Hero Badge Text</h4>
+          <input class="adm-input" id="f-hero-badge" type="text" placeholder="e.g. ⭐ 4.4 · Google's Favourite Café" />
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Hero Tagline</h4>
+          <textarea class="adm-input" id="f-hero-tagline" rows="2" placeholder="Short tagline below the title"></textarea>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Rating & Reviews</h4>
+          <div class="adm-row">
+            <div class="adm-field-wrap">
+              <label>Rating (e.g. 4.4)</label>
+              <input class="adm-input" id="f-rating" type="text" placeholder="4.4" />
+            </div>
+            <div class="adm-field-wrap">
+              <label>Review Count (e.g. 3,665)</label>
+              <input class="adm-input" id="f-review-count" type="text" placeholder="3,665" />
+            </div>
+          </div>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Price Range</h4>
+          <div class="adm-row">
+            <div class="adm-field-wrap">
+              <label>Price text</label>
+              <input class="adm-input" id="f-price" type="text" placeholder="₹400 – ₹1,400 per person" />
+            </div>
+          </div>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">CTA Buttons</h4>
+          <div class="adm-row">
+            <div class="adm-field-wrap">
+              <label>Reserve Button Text</label>
+              <input class="adm-input" id="f-cta-reserve-text" type="text" placeholder="🍽️ Reserve a Table" />
+            </div>
+            <div class="adm-field-wrap">
+              <label>Reserve Button Link (tel: or URL)</label>
+              <input class="adm-input" id="f-cta-reserve-href" type="text" placeholder="tel:01412744131" />
+            </div>
+          </div>
+          <div class="adm-row" style="margin-top:1rem">
+            <div class="adm-field-wrap">
+              <label>Order Button Text</label>
+              <input class="adm-input" id="f-cta-order-text" type="text" placeholder="🛵 Order on Swiggy" />
+            </div>
+            <div class="adm-field-wrap">
+              <label>Order Button Link</label>
+              <input class="adm-input" id="f-cta-order-href" type="text" placeholder="https://swiggy.com/..." />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: ABOUT -->
+      <div class="adm-tab" id="tab-about">
+        <div class="adm-card">
+          <h4 class="adm-card-title">About / Story Text</h4>
+          <textarea class="adm-input" id="f-about-text" rows="5" placeholder="Main about paragraph..."></textarea>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Highlight Cards</h4>
+          <p class="adm-hint">Edit the title and description for each feature card.</p>
+          <div id="highlights-editor"></div>
+        </div>
+      </div>
+
+      <!-- TAB: MENU -->
+      <div class="adm-tab" id="tab-menu">
+        <div class="adm-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h4 class="adm-card-title" style="margin:0">Menu Items</h4>
+            <button class="adm-btn-add" onclick="addMenuItem()">+ Add Item</button>
+          </div>
+          <p class="adm-hint">Drag to reorder. Changes reflect live on the menu grid.</p>
+          <div id="menu-editor"></div>
+        </div>
+      </div>
+
+      <!-- TAB: REVIEWS -->
+      <div class="adm-tab" id="tab-reviews">
+        <div class="adm-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h4 class="adm-card-title" style="margin:0">Customer Reviews</h4>
+            <button class="adm-btn-add" onclick="addReview()">+ Add Review</button>
+          </div>
+          <div id="reviews-editor"></div>
+        </div>
+      </div>
+
+      <!-- TAB: CONTACT -->
+      <div class="adm-tab" id="tab-contact">
+        <div class="adm-card">
+          <h4 class="adm-card-title">Address</h4>
+          <textarea class="adm-input" id="f-address" rows="3"></textarea>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Phone Number</h4>
+          <div class="adm-row">
+            <div class="adm-field-wrap">
+              <label>Display number</label>
+              <input class="adm-input" id="f-phone-display" type="text" placeholder="0141 274 4131" />
+            </div>
+            <div class="adm-field-wrap">
+              <label>tel: link (digits only)</label>
+              <input class="adm-input" id="f-phone-href" type="text" placeholder="01412744131" />
+            </div>
+          </div>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Opening Hours</h4>
+          <div id="hours-editor"></div>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Google Maps Embed</h4>
+          <p class="adm-hint">Paste a Google Maps embed URL (from Share → Embed a map → src="...").</p>
+          <input class="adm-input" id="f-map-url" type="text" placeholder="https://maps.google.com/maps?q=..." />
+        </div>
+      </div>
+
+      <!-- TAB: BANNER / ANNOUNCEMENT -->
+      <div class="adm-tab" id="tab-banner">
+        <div class="adm-card">
+          <h4 class="adm-card-title">Announcement Banner</h4>
+          <p class="adm-hint">Show a sitewide banner (e.g. special hours, events, offers). Leave blank to hide.</p>
+          <label class="adm-toggle-row">
+            <span>Show banner</span>
+            <label class="adm-toggle">
+              <input type="checkbox" id="f-banner-active" />
+              <span class="adm-slider"></span>
+            </label>
+          </label>
+          <textarea class="adm-input" id="f-banner-text" rows="2" placeholder="e.g. 🎉 Special Sunday Brunch — Book your table now!" style="margin-top:1rem"></textarea>
+          <div class="adm-row" style="margin-top:1rem">
+            <div class="adm-field-wrap">
+              <label>Background colour</label>
+              <input class="adm-input" id="f-banner-bg" type="color" value="#C1603A" style="height:42px;padding:4px 8px;cursor:pointer;" />
+            </div>
+            <div class="adm-field-wrap">
+              <label>Text colour</label>
+              <input class="adm-input" id="f-banner-color" type="color" value="#FFFDF9" style="height:42px;padding:4px 8px;cursor:pointer;" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: SETTINGS -->
+      <div class="adm-tab" id="tab-settings">
+        <div class="adm-card">
+          <h4 class="adm-card-title">Change Admin Password</h4>
+          <div class="adm-row">
+            <div class="adm-field-wrap">
+              <label>Current password</label>
+              <input class="adm-input" id="f-old-pass" type="password" placeholder="••••••••" />
+            </div>
+          </div>
+          <div class="adm-row" style="margin-top:1rem">
+            <div class="adm-field-wrap">
+              <label>New password</label>
+              <input class="adm-input" id="f-new-pass" type="password" placeholder="min 6 characters" />
+            </div>
+            <div class="adm-field-wrap">
+              <label>Confirm new password</label>
+              <input class="adm-input" id="f-confirm-pass" type="password" placeholder="repeat new password" />
+            </div>
+          </div>
+          <p id="f-pass-msg" style="font-size:0.82rem;margin-top:0.5rem;"></p>
+          <button class="adm-btn-save" style="margin-top:1rem" onclick="changePassword()">Update Password</button>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">Reset All Content</h4>
+          <p class="adm-hint" style="color:#e53935">⚠️ This will reset ALL editable content back to the original defaults. This cannot be undone.</p>
+          <button class="adm-btn-danger" onclick="resetAll()">Reset to Defaults</button>
+        </div>
+        <div class="adm-card">
+          <h4 class="adm-card-title">About This Panel</h4>
+          <p class="adm-hint">Café Bae Admin v1.0 · All changes are saved locally in your browser and reflected live on the public page. Default credentials: <strong>admin / cafebae123</strong></p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Announcement banner (hidden by default) -->
+<div id="site-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:200;padding:0.65rem 2rem;text-align:center;font-size:0.88rem;font-weight:600;"></div>
+
+<style>
+/* ══════════════════════════════════════
+   ADMIN OVERLAY STYLES
+══════════════════════════════════════ */
+#admin-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0e0b09;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8ddd3;
+}
+
+/* LOGIN */
+#admin-login {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%;
+  background: radial-gradient(ellipse at 60% 40%, #2a1a0e 0%, #0e0b09 70%);
+}
+.adm-login-card {
+  background: #1c1410;
+  border: 1px solid #3a2a1e;
+  border-radius: 18px;
+  padding: 2.5rem 2.2rem;
+  width: 100%; max-width: 380px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+}
+.adm-logo { text-align:center; margin-bottom:2rem; }
+.adm-logo span { font-size:2.5rem; display:block; margin-bottom:0.5rem; }
+.adm-logo h2 { font-family:'Playfair Display',serif; color:#d4a853; font-size:1.5rem; }
+.adm-logo p { font-size:0.82rem; color:#7a6a5a; margin-top:0.3rem; }
+.adm-field { margin-bottom:1.1rem; }
+.adm-field label { display:block; font-size:0.78rem; font-weight:600; color:#9a8878; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem; }
+.adm-eye { position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:1rem; color:#7a6a5a; }
+.adm-btn-login { width:100%; padding:0.85rem; background:linear-gradient(135deg,#c1603a,#d4a853); border:none; border-radius:10px; color:#fff; font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:700; cursor:pointer; margin-top:0.5rem; transition:opacity 0.2s,transform 0.15s; }
+.adm-btn-login:hover { opacity:0.92; transform:translateY(-1px); }
+.adm-close-btn { width:100%; padding:0.6rem; background:transparent; border:1px solid #3a2a1e; border-radius:10px; color:#7a6a5a; font-family:'DM Sans',sans-serif; font-size:0.85rem; cursor:pointer; margin-top:0.6rem; transition:all 0.2s; }
+.adm-close-btn:hover { border-color:#7a6a5a; color:#e8ddd3; }
+
+/* DASHBOARD LAYOUT */
+#admin-dashboard { display:flex; height:100%; }
+
+.adm-sidebar {
+  width: 240px; flex-shrink:0;
+  background: #150f0a;
+  border-right: 1px solid #2a1e14;
+  display: flex; flex-direction:column;
+  overflow-y: auto;
+}
+.adm-sidebar-logo {
+  display:flex; align-items:center; gap:0.8rem;
+  padding: 1.5rem 1.2rem 1.2rem;
+  border-bottom: 1px solid #2a1e14;
+}
+.adm-sidebar-logo span { font-size:1.6rem; }
+.adm-sidebar-logo strong { display:block; color:#d4a853; font-size:0.95rem; }
+.adm-sidebar-logo small { font-size:0.72rem; color:#5a4a3a; }
+.adm-nav { flex:1; padding:1rem 0.6rem; display:flex; flex-direction:column; gap:0.25rem; }
+.adm-nav-btn { width:100%; text-align:left; padding:0.7rem 1rem; background:transparent; border:none; border-radius:9px; color:#9a8878; font-family:'DM Sans',sans-serif; font-size:0.85rem; cursor:pointer; transition:all 0.18s; }
+.adm-nav-btn:hover { background:#2a1e14; color:#e8ddd3; }
+.adm-nav-btn.active { background:linear-gradient(135deg,rgba(193,96,58,0.25),rgba(212,168,83,0.1)); color:#d4a853; font-weight:600; }
+.adm-sidebar-footer { padding:1rem; border-top:1px solid #2a1e14; }
+.adm-logout { width:100%; padding:0.6rem; background:transparent; border:1px solid #3a2a1e; border-radius:8px; color:#7a6a5a; font-family:'DM Sans',sans-serif; font-size:0.82rem; cursor:pointer; transition:all 0.2s; }
+.adm-logout:hover { border-color:#c1603a; color:#c1603a; }
+
+.adm-main { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+.adm-topbar { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2rem; background:#1c1410; border-bottom:1px solid #2a1e14; flex-wrap:wrap; gap:1rem; }
+.adm-topbar h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:#e8ddd3; }
+.adm-topbar p { font-size:0.8rem; color:#5a4a3a; margin-top:0.15rem; }
+.adm-topbar-actions { display:flex; align-items:center; gap:0.8rem; }
+.adm-save-status { font-size:0.78rem; color:#8D9E6A; }
+.adm-btn-save { padding:0.6rem 1.4rem; background:linear-gradient(135deg,#c1603a,#d4a853); border:none; border-radius:8px; color:#fff; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; transition:opacity 0.2s; }
+.adm-btn-save:hover { opacity:0.88; }
+.adm-btn-preview { padding:0.6rem 1.2rem; background:transparent; border:1px solid #3a2a1e; border-radius:8px; color:#9a8878; font-family:'DM Sans',sans-serif; font-size:0.85rem; cursor:pointer; transition:all 0.2s; }
+.adm-btn-preview:hover { border-color:#9a8878; color:#e8ddd3; }
+.adm-btn-danger { padding:0.6rem 1.4rem; background:#4a1515; border:1px solid #c62828; border-radius:8px; color:#ff8a80; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.85rem; cursor:pointer; transition:all 0.2s; }
+.adm-btn-danger:hover { background:#c62828; color:#fff; }
+.adm-btn-add { padding:0.45rem 1rem; background:#1e2a14; border:1px solid #6B7B4E; border-radius:7px; color:#8D9E6A; font-family:'DM Sans',sans-serif; font-size:0.82rem; cursor:pointer; transition:all 0.2s; }
+.adm-btn-add:hover { background:#6B7B4E; color:#fff; }
+
+/* TABS */
+.adm-tab { display:none; flex:1; overflow-y:auto; padding:1.8rem 2rem; }
+.adm-tab.active { display:block; }
+
+.adm-card { background:#1c1410; border:1px solid #2a1e14; border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; }
+.adm-card-title { font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#d4a853; margin-bottom:1rem; }
+.adm-hint { font-size:0.8rem; color:#5a4a3a; margin-bottom:1rem; line-height:1.5; }
+.adm-row { display:flex; gap:1rem; }
+.adm-field-wrap { flex:1; }
+.adm-field-wrap label { display:block; font-size:0.75rem; font-weight:600; color:#7a6a5a; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.4rem; }
+
+/* INPUTS */
+.adm-input {
+  width:100%; background:#120d08; border:1px solid #3a2a1e;
+  border-radius:8px; color:#e8ddd3; font-family:'DM Sans',sans-serif;
+  font-size:0.88rem; padding:0.7rem 0.9rem; outline:none;
+  transition:border 0.2s; resize:vertical;
+}
+.adm-input:focus { border-color:#c1603a; }
+.adm-input::placeholder { color:#4a3728; }
+
+/* TOGGLE */
+.adm-toggle-row { display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+.adm-toggle { position:relative; display:inline-block; width:44px; height:24px; }
+.adm-toggle input { opacity:0; width:0; height:0; }
+.adm-slider { position:absolute; inset:0; background:#2a1e14; border-radius:24px; transition:.3s; cursor:pointer; }
+.adm-slider::before { content:""; position:absolute; height:18px; width:18px; left:3px; bottom:3px; background:#5a4a3a; border-radius:50%; transition:.3s; }
+.adm-toggle input:checked + .adm-slider { background:#c1603a; }
+.adm-toggle input:checked + .adm-slider::before { transform:translateX(20px); background:#fff; }
+
+/* MENU / REVIEW ITEM ROW */
+.adm-item-row { background:#120d08; border:1px solid #2a1e14; border-radius:10px; padding:1rem; margin-bottom:0.8rem; position:relative; }
+.adm-item-row .adm-item-header { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.8rem; }
+.adm-item-row .adm-item-header span { font-size:0.8rem; font-weight:600; color:#7a6a5a; flex:1; }
+.adm-item-row .adm-del { background:none; border:none; color:#5a4a3a; font-size:1rem; cursor:pointer; padding:0.2rem 0.5rem; border-radius:5px; transition:all 0.2s; }
+.adm-item-row .adm-del:hover { background:#4a1515; color:#ff8a80; }
+.adm-item-row .adm-row { gap:0.8rem; }
+.adm-badge-pill { display:inline-block; padding:0.2rem 0.7rem; border-radius:50px; font-size:0.7rem; font-weight:700; text-transform:uppercase; margin-top:0.4rem; }
+
+/* HOURS editor */
+.adm-hour-row { display:flex; align-items:center; gap:0.8rem; margin-bottom:0.6rem; }
+.adm-hour-row label { font-size:0.78rem; color:#7a6a5a; min-width:70px; }
+.adm-hour-row input { flex:1; }
+
+/* Scrollbar */
+.adm-tab::-webkit-scrollbar { width:5px; }
+.adm-tab::-webkit-scrollbar-track { background:#120d08; }
+.adm-tab::-webkit-scrollbar-thumb { background:#3a2a1e; border-radius:3px; }
+.adm-sidebar::-webkit-scrollbar { width:4px; }
+.adm-sidebar::-webkit-scrollbar-thumb { background:#2a1e14; }
+
+/* Admin — Multi-device responsive */
+@media(max-width:1024px){
+  .adm-sidebar { width:210px; }
+}
+@media(max-width:768px){
+  .adm-sidebar { width:180px; }
+  .adm-topbar { padding:0.9rem 1rem; flex-wrap:wrap; }
+  .adm-tab { padding:1rem; }
+  .adm-row { flex-direction:column; }
+  .adm-topbar-actions { width:100%; justify-content:flex-end; }
+}
+@media(max-width:600px){
+  #admin-dashboard { flex-direction:column; }
+  .adm-sidebar { width:100%; height:auto; flex-direction:row; flex-wrap:wrap; align-items:center; padding:0.4rem; }
+  .adm-sidebar-logo { padding:0.5rem 0.8rem; border-bottom:none; border-right:1px solid #2a1e14; }
+  .adm-nav { flex-direction:row; flex-wrap:wrap; padding:0.3rem; gap:0.15rem; flex:1; }
+  .adm-nav-btn { padding:0.35rem 0.6rem; font-size:0.72rem; }
+  .adm-sidebar-footer { padding:0.4rem; margin-left:auto; }
+  .adm-logout { padding:0.35rem 0.7rem; font-size:0.72rem; }
+  .adm-tab { padding:0.8rem; }
+  .adm-card { padding:1rem; }
+  .adm-topbar { padding:0.8rem; }
+  .adm-topbar h3 { font-size:0.95rem; }
+  .adm-login-card { margin:1rem; padding:2rem 1.2rem; max-width:100%; }
+}
+@media(max-width:374px){
+  .adm-nav-btn { padding:0.3rem 0.5rem; font-size:0.68rem; }
+  .adm-btn-save, .adm-btn-preview { padding:0.5rem 0.8rem; font-size:0.78rem; }
+}
+</style>
+
+<script>
+/* ══════════════════════════════════════════════
+   ADMIN PANEL LOGIC
+══════════════════════════════════════════════ */
+
+/* ── Defaults ── */
+const DEFAULTS = {
+  password: 'cafebae123',
+  heroBadge: '⭐ 4.4 · Google\'s Favourite Café in C Scheme',
+  heroTagline: 'Breakfast, Continental & Asian flavours crafted with love — in the heart of Jaipur\'s vibrant C Scheme.',
+  rating: '4.4',
+  reviewCount: '3,665',
+  price: '₹400 – ₹1,400 per person',
+  priceNote: 'Reported by 328 people',
+  ctaReserveText: '🍽️ Reserve a Table',
+  ctaReserveHref: 'tel:01412744131',
+  ctaOrderText: '🛵 Order on Swiggy',
+  ctaOrderHref: 'https://www.swiggy.com/city/jaipur/stepout-cafe-sehdev-marg-c-scheme-rest44653?is_retargeting=true&media_source=GooglePlaceOrder',
+  aboutText: 'Café Bae (कैफे बे) is Jaipur\'s warm corner where conversations flow freely, coffee is always fresh, and the food feels like a hug. Nestled in the leafy lanes of C Scheme, we\'ve been the breakfast spot, the meeting point, and the weekend retreat for thousands of happy guests.',
+  address: 'A/1, 21, Sahkar Marg, Circle, near 22 Godown,\nC Scheme, Jaipur, Rajasthan 302006',
+  phoneDisplay: '0141 274 4131',
+  phoneHref: '01412744131',
+  mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.4!2d75.8083!3d26.9157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db1a07b2a5555%3A0x5b7b7b7b7b7b7b7b!2sCafe%20Bae!5e0!3m2!1sen!2sin!4v1',
+  bannerActive: false,
+  bannerText: '',
+  bannerBg: '#C1603A',
+  bannerColor: '#FFFDF9',
+  highlights: [
+    { icon:'👨‍👩‍👧‍👦', title:'Family-Friendly', desc:'A welcoming space for the whole family — kids, parents, grandparents alike love it here.' },
+    { icon:'🌿', title:'Outdoor Seating', desc:'Enjoy fresh Jaipur air with our beautiful outdoor seating area — perfect for the mornings.' },
+    { icon:'🚗', title:'Drive-Through', desc:'In a hurry? Our drive-through lets you grab your favourite snacks without stepping out.' },
+    { icon:'🛵', title:'No-Contact Delivery', desc:'Enjoy Café Bae from the comfort of your home with our safe no-contact delivery service.' },
+    { icon:'🍽️', title:'Dine-In Experience', desc:'Savour every dish in our thoughtfully designed interiors with warm, attentive service.' }
+  ],
+  menuItems: [
+    { emoji:'🫐', name:'Blueberry Cheesecake', tag:'Dessert', badge:'🔥 Bestseller' },
+    { emoji:'☕', name:'Cappuccino', tag:'Beverage', badge:'🔥 Bestseller' },
+    { emoji:'🧀', name:'Cheese Nachos Supremos', tag:'Snack', badge:'⭐ Fan Fave' },
+    { emoji:'🍳', name:'Sunday Breakfast', tag:'Breakfast', badge:'🏆 Most Ordered' },
+    { emoji:'🫙', name:'Mezze Platter', tag:'Sharing', badge:'' },
+    { emoji:'🍫', name:'Belgium Chocolate Cake', tag:'Dessert', badge:'🔥 Bestseller' },
+    { emoji:'🍕', name:'All Veggie Pizza', tag:'Main', badge:'' },
+    { emoji:'🧄', name:'Masala Cheese Garlic Bread', tag:'Snack', badge:'' },
+    { emoji:'🍉', name:'Watermelon Mojito', tag:'Beverage', badge:'⭐ Summer Hit' },
+    { emoji:'🥐', name:'Cheese Cigarillos', tag:'Starter', badge:'⭐ Fan Fave' }
+  ],
+  reviews: [
+    { initials:'KK', name:'Kriti Kanwar', stars:5, text:'The service is very prompt and the food is absolutely delicious. Special shoutout to Chef Gunjan and Chef Anurag — the Sunday Breakfast was everything. Gopal ji made us feel so welcome. This is our family\'s go-to spot in Jaipur!' },
+    { initials:'RS', name:'Riya Sharma', stars:5, text:'Café Bae is my weekend ritual. The Blueberry Cheesecake is hands down the best I\'ve had in Rajasthan. The outdoor seating is so peaceful in the mornings. And the Watermelon Mojito — absolutely refreshing!' },
+    { initials:'AM', name:'Arjun Mehta', stars:4, text:'Loved the Cheese Nachos Supremos and the Belgium Chocolate Cake — both are absolutely divine. Staff was courteous, the vibe is perfect for a catch-up with friends, and the coffee is always on point. Will keep coming back!' }
+  ],
+  hours: [
+    { day:'Mon–Fri', time:'8:00 AM – 10:00 PM' },
+    { day:'Saturday', time:'8:00 AM – 10:00 PM' },
+    { day:'Sunday', time:'8:00 AM – 10:00 PM' }
+  ]
+};
+
+function load(key, fallback) {
+  try { const v = localStorage.getItem('cbae_' + key); return v !== null ? JSON.parse(v) : fallback; }
+  catch { return fallback; }
+}
+function save(key, val) { localStorage.setItem('cbae_' + key, JSON.stringify(val)); }
+
+/* ── Admin trigger ── */
+document.getElementById('admin-trigger').addEventListener('click', function(e){
+  e.preventDefault();
+  openAdmin();
+});
+
+function openAdmin() {
+  document.getElementById('admin-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  document.getElementById('admin-login').style.display = 'flex';
+  document.getElementById('admin-dashboard').style.display = 'none';
+  document.getElementById('adm-user').value = '';
+  document.getElementById('adm-pass').value = '';
+  document.getElementById('adm-error').style.display = 'none';
+  setTimeout(() => document.getElementById('adm-user').focus(), 100);
+}
+
+function closeAdmin() {
+  document.getElementById('admin-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function togglePass() {
+  const p = document.getElementById('adm-pass');
+  p.type = p.type === 'password' ? 'text' : 'password';
+}
+
+function adminLogin() {
+  const user = document.getElementById('adm-user').value.trim();
+  const pass = document.getElementById('adm-pass').value;
+  const storedPass = load('password', DEFAULTS.password);
+  if (user === 'admin' && pass === storedPass) {
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-dashboard').style.display = 'flex';
+    initDashboard();
+  } else {
+    document.getElementById('adm-error').style.display = 'block';
+  }
+}
+
+document.getElementById('adm-pass').addEventListener('keydown', e => { if(e.key==='Enter') adminLogin(); });
+document.getElementById('adm-user').addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('adm-pass').focus(); });
+
+function adminLogout() {
+  document.getElementById('admin-login').style.display = 'flex';
+  document.getElementById('admin-dashboard').style.display = 'none';
+}
+
+/* ── Tab switching ── */
+const TAB_META = {
+  hero:     { title:'Hero Section',      sub:'Edit your homepage headline and CTAs' },
+  about:    { title:'About / Story',     sub:'Update the cafe description and feature cards' },
+  menu:     { title:'Menu Items',        sub:'Add, remove or reorder popular dishes' },
+  reviews:  { title:'Customer Reviews',  sub:'Manage review cards shown on the site' },
+  contact:  { title:'Contact & Hours',   sub:'Update address, phone, map and opening times' },
+  banner:   { title:'Announcement Banner', sub:'Show a temporary sitewide message' },
+  settings: { title:'Settings',          sub:'Password, reset and panel information' }
+};
+
+function showTab(id) {
+  document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.adm-nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  document.getElementById('adm-tab-title').textContent = TAB_META[id].title;
+  document.getElementById('adm-tab-sub').textContent = TAB_META[id].sub;
+}
+
+/* ── Init dashboard – populate fields from storage ── */
+function initDashboard() {
+  // Hero
+  document.getElementById('f-hero-badge').value      = load('heroBadge', DEFAULTS.heroBadge);
+  document.getElementById('f-hero-tagline').value    = load('heroTagline', DEFAULTS.heroTagline);
+  document.getElementById('f-rating').value          = load('rating', DEFAULTS.rating);
+  document.getElementById('f-review-count').value    = load('reviewCount', DEFAULTS.reviewCount);
+  document.getElementById('f-price').value           = load('price', DEFAULTS.price);
+  document.getElementById('f-cta-reserve-text').value = load('ctaReserveText', DEFAULTS.ctaReserveText);
+  document.getElementById('f-cta-reserve-href').value = load('ctaReserveHref', DEFAULTS.ctaReserveHref);
+  document.getElementById('f-cta-order-text').value  = load('ctaOrderText', DEFAULTS.ctaOrderText);
+  document.getElementById('f-cta-order-href').value  = load('ctaOrderHref', DEFAULTS.ctaOrderHref);
+  // About
+  document.getElementById('f-about-text').value      = load('aboutText', DEFAULTS.aboutText);
+  renderHighlightsEditor();
+  // Menu
+  renderMenuEditor();
+  // Reviews
+  renderReviewsEditor();
+  // Contact
+  document.getElementById('f-address').value         = load('address', DEFAULTS.address);
+  document.getElementById('f-phone-display').value   = load('phoneDisplay', DEFAULTS.phoneDisplay);
+  document.getElementById('f-phone-href').value      = load('phoneHref', DEFAULTS.phoneHref);
+  document.getElementById('f-map-url').value         = load('mapUrl', DEFAULTS.mapUrl);
+  renderHoursEditor();
+  // Banner
+  document.getElementById('f-banner-active').checked = load('bannerActive', DEFAULTS.bannerActive);
+  document.getElementById('f-banner-text').value     = load('bannerText', DEFAULTS.bannerText);
+  document.getElementById('f-banner-bg').value       = load('bannerBg', DEFAULTS.bannerBg);
+  document.getElementById('f-banner-color').value    = load('bannerColor', DEFAULTS.bannerColor);
+}
+
+/* ── Highlights editor ── */
+function renderHighlightsEditor() {
+  const items = load('highlights', DEFAULTS.highlights);
+  const el = document.getElementById('highlights-editor');
+  el.innerHTML = items.map((h, i) => `
+    <div class="adm-item-row">
+      <div class="adm-item-header"><span>Card ${i+1}</span></div>
+      <div class="adm-row">
+        <div class="adm-field-wrap" style="flex:0 0 70px">
+          <label>Icon</label>
+          <input class="adm-input" data-hi="${i}" data-k="icon" value="${h.icon}" style="font-size:1.2rem;text-align:center" />
+        </div>
+        <div class="adm-field-wrap">
+          <label>Title</label>
+          <input class="adm-input" data-hi="${i}" data-k="title" value="${h.title}" />
+        </div>
+      </div>
+      <div style="margin-top:0.6rem">
+        <label class="adm-field-wrap" style="display:block">
+          <span style="font-size:0.75rem;font-weight:600;color:#7a6a5a;text-transform:uppercase;letter-spacing:0.07em;">Description</span>
+        </label>
+        <textarea class="adm-input" data-hi="${i}" data-k="desc" rows="2" style="margin-top:0.3rem">${h.desc}</textarea>
+      </div>
+    </div>`).join('');
+}
+
+/* ── Menu editor ── */
+function renderMenuEditor() {
+  const items = load('menuItems', DEFAULTS.menuItems);
+  const el = document.getElementById('menu-editor');
+  el.innerHTML = items.map((m, i) => `
+    <div class="adm-item-row" data-mi="${i}">
+      <div class="adm-item-header">
+        <span>Item ${i+1}</span>
+        <button class="adm-del" onclick="deleteMenuItem(${i})">🗑 Remove</button>
+      </div>
+      <div class="adm-row">
+        <div class="adm-field-wrap" style="flex:0 0 70px">
+          <label>Emoji</label>
+          <input class="adm-input" data-mi="${i}" data-k="emoji" value="${m.emoji}" style="font-size:1.2rem;text-align:center" />
+        </div>
+        <div class="adm-field-wrap">
+          <label>Name</label>
+          <input class="adm-input" data-mi="${i}" data-k="name" value="${m.name}" />
+        </div>
+        <div class="adm-field-wrap" style="flex:0 0 120px">
+          <label>Tag</label>
+          <input class="adm-input" data-mi="${i}" data-k="tag" value="${m.tag}" />
+        </div>
+      </div>
+      <div style="margin-top:0.6rem">
+        <label style="font-size:0.75rem;font-weight:600;color:#7a6a5a;text-transform:uppercase;letter-spacing:0.07em;">Badge (optional)</label>
+        <input class="adm-input" data-mi="${i}" data-k="badge" value="${m.badge}" placeholder="e.g. 🔥 Bestseller" style="margin-top:0.3rem" />
+      </div>
+    </div>`).join('');
+}
+
+function addMenuItem() {
+  const items = load('menuItems', DEFAULTS.menuItems);
+  items.push({ emoji:'🍴', name:'New Dish', tag:'Special', badge:'' });
+  save('menuItems', items);
+  renderMenuEditor();
+}
+
+function deleteMenuItem(i) {
+  const items = load('menuItems', DEFAULTS.menuItems);
+  items.splice(i, 1);
+  save('menuItems', items);
+  renderMenuEditor();
+}
+
+/* ── Reviews editor ── */
+function renderReviewsEditor() {
+  const reviews = load('reviews', DEFAULTS.reviews);
+  const el = document.getElementById('reviews-editor');
+  el.innerHTML = reviews.map((r, i) => `
+    <div class="adm-item-row">
+      <div class="adm-item-header">
+        <span>Review ${i+1}</span>
+        <button class="adm-del" onclick="deleteReview(${i})">🗑 Remove</button>
+      </div>
+      <div class="adm-row">
+        <div class="adm-field-wrap" style="flex:0 0 80px">
+          <label>Initials</label>
+          <input class="adm-input" data-ri="${i}" data-k="initials" value="${r.initials}" style="text-align:center;font-weight:700" />
+        </div>
+        <div class="adm-field-wrap">
+          <label>Reviewer Name</label>
+          <input class="adm-input" data-ri="${i}" data-k="name" value="${r.name}" />
+        </div>
+        <div class="adm-field-wrap" style="flex:0 0 70px">
+          <label>Stars (1–5)</label>
+          <input class="adm-input" data-ri="${i}" data-k="stars" type="number" min="1" max="5" value="${r.stars}" />
+        </div>
+      </div>
+      <div style="margin-top:0.6rem">
+        <label style="font-size:0.75rem;font-weight:600;color:#7a6a5a;text-transform:uppercase;letter-spacing:0.07em;">Review Text</label>
+        <textarea class="adm-input" data-ri="${i}" data-k="text" rows="3" style="margin-top:0.3rem">${r.text}</textarea>
+      </div>
+    </div>`).join('');
+}
+
+function addReview() {
+  const reviews = load('reviews', DEFAULTS.reviews);
+  reviews.push({ initials:'GU', name:'Guest User', stars:5, text:'Amazing experience!' });
+  save('reviews', reviews);
+  renderReviewsEditor();
+}
+
+function deleteReview(i) {
+  const reviews = load('reviews', DEFAULTS.reviews);
+  reviews.splice(i, 1);
+  save('reviews', reviews);
+  renderReviewsEditor();
+}
+
+/* ── Hours editor ── */
+function renderHoursEditor() {
+  const hours = load('hours', DEFAULTS.hours);
+  document.getElementById('hours-editor').innerHTML = hours.map((h, i) => `
+    <div class="adm-hour-row">
+      <input class="adm-input" data-hri="${i}" data-k="day" value="${h.day}" style="flex:0 0 120px" />
+      <input class="adm-input" data-hri="${i}" data-k="time" value="${h.time}" />
+    </div>`).join('');
+}
+
+/* ── Collect field values before saving ── */
+function collectFromEditor(selector, dataAttr, defaults) {
+  const items = JSON.parse(JSON.stringify(load(selector === 'menuItems' ? 'menuItems' : selector === 'reviews' ? 'reviews' : selector === 'highlights' ? 'highlights' : 'hours', defaults)));
+  document.querySelectorAll(`[data-${dataAttr}]`).forEach(el => {
+    const i = parseInt(el.getAttribute(`data-${dataAttr}`));
+    const k = el.getAttribute('data-k');
+    if (items[i] !== undefined) items[i][k] = el.tagName === 'INPUT' && el.type === 'number' ? parseInt(el.value) : el.value;
+  });
+  return items;
+}
+
+/* ── SAVE ALL ── */
+function saveAll() {
+  // Hero
+  save('heroBadge',     document.getElementById('f-hero-badge').value);
+  save('heroTagline',   document.getElementById('f-hero-tagline').value);
+  save('rating',        document.getElementById('f-rating').value);
+  save('reviewCount',   document.getElementById('f-review-count').value);
+  save('price',         document.getElementById('f-price').value);
+  save('ctaReserveText',document.getElementById('f-cta-reserve-text').value);
+  save('ctaReserveHref',document.getElementById('f-cta-reserve-href').value);
+  save('ctaOrderText',  document.getElementById('f-cta-order-text').value);
+  save('ctaOrderHref',  document.getElementById('f-cta-order-href').value);
+  // About
+  save('aboutText',     document.getElementById('f-about-text').value);
+  save('highlights',    collectFromEditor('highlights', 'hi', DEFAULTS.highlights));
+  // Menu
+  save('menuItems',     collectFromEditor('menuItems', 'mi', DEFAULTS.menuItems));
+  // Reviews
+  save('reviews',       collectFromEditor('reviews', 'ri', DEFAULTS.reviews));
+  // Contact
+  save('address',       document.getElementById('f-address').value);
+  save('phoneDisplay',  document.getElementById('f-phone-display').value);
+  save('phoneHref',     document.getElementById('f-phone-href').value);
+  save('mapUrl',        document.getElementById('f-map-url').value);
+  save('hours',         collectFromEditor('hours', 'hri', DEFAULTS.hours));
+  // Banner
+  save('bannerActive',  document.getElementById('f-banner-active').checked);
+  save('bannerText',    document.getElementById('f-banner-text').value);
+  save('bannerBg',      document.getElementById('f-banner-bg').value);
+  save('bannerColor',   document.getElementById('f-banner-color').value);
+
+  // Apply live
+  applyAll();
+
+  const st = document.getElementById('adm-save-status');
+  st.textContent = '✓ Saved at ' + new Date().toLocaleTimeString();
+  setTimeout(() => st.textContent = '', 3000);
+}
+
+/* ── APPLY ALL to public page ── */
+function applyAll() {
+  setText('pub-hero-badge',    load('heroBadge', DEFAULTS.heroBadge));
+  setText('pub-hero-tagline',  load('heroTagline', DEFAULTS.heroTagline));
+  setText('pub-rating',        load('rating', DEFAULTS.rating));
+  setText('pub-review-count',  load('reviewCount', DEFAULTS.reviewCount));
+  setText('pub-price',         load('price', DEFAULTS.price));
+  setText('pub-about-text',    load('aboutText', DEFAULTS.aboutText));
+
+  // CTAs
+  const resEl = document.getElementById('pub-cta-reserve');
+  if(resEl){ resEl.textContent = load('ctaReserveText', DEFAULTS.ctaReserveText); resEl.href = load('ctaReserveHref', DEFAULTS.ctaReserveHref); }
+  const ordEl = document.getElementById('pub-cta-order');
+  if(ordEl){ ordEl.textContent = load('ctaOrderText', DEFAULTS.ctaOrderText); ordEl.href = load('ctaOrderHref', DEFAULTS.ctaOrderHref); }
+
+  // Phone
+  const phoneEl = document.getElementById('pub-phone');
+  if(phoneEl){ phoneEl.textContent = load('phoneDisplay', DEFAULTS.phoneDisplay); phoneEl.href = 'tel:' + load('phoneHref', DEFAULTS.phoneHref); }
+
+  // Address
+  const addrEl = document.getElementById('pub-address');
+  if(addrEl) addrEl.innerHTML = load('address', DEFAULTS.address).replace(/\n/g,'<br/>');
+
+  // Map
+  const mapIframe = document.querySelector('.map-container iframe');
+  if(mapIframe) mapIframe.src = load('mapUrl', DEFAULTS.mapUrl);
+
+  // Hours
+  const hrs = load('hours', DEFAULTS.hours);
+  const hourRows = document.querySelectorAll('.hour-row');
+  hourRows.forEach((row, i) => {
+    if(hrs[i]){
+      const cells = row.querySelectorAll('span');
+      if(cells[0]) cells[0].textContent = hrs[i].day;
+      if(cells[1]) cells[1].textContent = hrs[i].time;
+    }
+  });
+
+  // Highlights
+  const hl = load('highlights', DEFAULTS.highlights);
+  const hlCards = document.querySelectorAll('.highlight-card');
+  hlCards.forEach((card, i) => {
+    if(hl[i]){
+      const ico = card.querySelector('.highlight-icon'); if(ico) ico.textContent = hl[i].icon;
+      const ttl = card.querySelector('h3'); if(ttl) ttl.textContent = hl[i].title;
+      const dsc = card.querySelector('p'); if(dsc) dsc.textContent = hl[i].desc;
+    }
+  });
+
+  // Menu items — rebuild dish cards
+  const mi = load('menuItems', DEFAULTS.menuItems);
+  const dishImgs = [
+    'https://lh3.googleusercontent.com/AKxLmrrTt9wnwO2KWuyJ1_sHfsQxLzUESDJo-9i5QN79voNUckAERwiFjHa8DSJ-GrnVBnA__8BlWyPOxa-_kBZTiw=w600-rw',
+    'https://lh3.googleusercontent.com/Joy-V0OZc3yJ4pza5hP3JrnWIi895m8bsnfTviWFIBlmno8nAciMbbu2DA7_EUgG5huU_htz33EfZ5QxA9kWBqS5eFQo=w600-rw',
+    'https://lh3.googleusercontent.com/juIBG-1a_dcLrjMwPEibcfxedR3ZU_Ugw6CAcqEkSneVz6Ae1tTeuRgOFul7jCNXpu8enPcAHM3Wsqz-8QLiWPYITVxm=w600-rw',
+    'https://lh3.googleusercontent.com/bGQkchZB8KPsJPDafgAKnCNfH1w8TPsFOKhCy2NctDrICUynLgicgEyz_8MlYcq0aO1hlo56NnrR0io9TgwPY2iiM3o=w600-rw',
+    'https://lh3.googleusercontent.com/VRZwlmpLTCGwCOIkRQ8N4B68FkW_DY1dvSBKEgb1FvQYwUt7F_svgK2bQqcE7EZN5VOhBV1gFfryt4FIqOgi9kxHjic=w600-rw',
+    'https://lh3.googleusercontent.com/n_Yvd1lhsZymY9FUqptJENR9FybP5FYJZNl4RGHZbPx0Ai3Wxv8ymbSMIWNLVPcP6ypmkF8E2Vjk_qw2HB_d-ATLjYc=w600-rw',
+    'https://lh3.googleusercontent.com/CSfbv1L2aSaSI2lGPKOwmmOMF29FucUmv03cqt9wGE9TOM60tLFjVTEqwW6okpxlaIGa1iJRy30FLpbcms8m46hvXA=w600-rw',
+    'https://lh3.googleusercontent.com/m1eT-FOLCj98W3dfDtrmldHQr19avFEFzK0lw1MzKwicVF7bk5A-71xqdx34kGI0R-VEedTuFeaTs-HOPJTLxrhnvAE=w600-rw',
+    'https://lh3.googleusercontent.com/iCi2KxIps0GNj5HApnD_Aln12RWIqyNoNLU3E37XTQ1EaOF-gU4_YH-mdKMgUHbASAf1LY5rqXNnnLnF4a12zDSbYms=w600-rw',
+    'https://lh3.googleusercontent.com/8ZS-loTef1ekztdcO-w8uljkFSMUpMxrLhx9FBQmXLBtz1ZpvzuBoy0Iyc8rCsz3ZfrWvImZRKeJvqMQKCldq-TOQ5KG=w600-rw'
+  ];
+  const dishGrid = document.querySelector('.dishes-grid');
+  if(dishGrid){
+    dishGrid.innerHTML = mi.map((m, i) => `
+      <div class="dish-card fade-up visible">
+        <div class="dish-img">
+          <img src="${dishImgs[i % dishImgs.length]}" alt="${m.name}" loading="lazy" />
+          <span class="dish-tag">${m.tag}</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-emoji">${m.emoji}</div>
+          <h3>${m.name}</h3>
+          ${m.badge ? `<span class="popular-badge">${m.badge}</span>` : ''}
+        </div>
+      </div>`).join('');
+  }
+
+  // Reviews — rebuild cards
+  const rv = load('reviews', DEFAULTS.reviews);
+  const revGrid = document.querySelector('.reviews-grid');
+  if(revGrid){
+    revGrid.innerHTML = rv.map(r => {
+      const stars = '★'.repeat(r.stars) + (r.stars < 5 ? '☆'.repeat(5 - r.stars) : '');
+      return `
+      <div class="review-card fade-up visible">
+        <div class="review-stars">${stars}</div>
+        <p class="review-text">"${r.text}"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">${r.initials}</div>
+          <div>
+            <div class="reviewer-name">${r.name}</div>
+            <div class="reviewer-date">Google Review · ${r.stars} ★</div>
+          </div>
+        </div>
+      </div>`; }).join('');
+  }
+
+  // Banner
+  const bannerEl = document.getElementById('site-banner');
+  const bannerActive = load('bannerActive', DEFAULTS.bannerActive);
+  const bannerText = load('bannerText', DEFAULTS.bannerText);
+  if(bannerActive && bannerText.trim()){
+    bannerEl.style.display = 'block';
+    bannerEl.textContent = bannerText;
+    bannerEl.style.background = load('bannerBg', DEFAULTS.bannerBg);
+    bannerEl.style.color = load('bannerColor', DEFAULTS.bannerColor);
+    document.getElementById('navbar').style.top = bannerEl.offsetHeight + 'px';
+  } else {
+    bannerEl.style.display = 'none';
+    document.getElementById('navbar').style.top = '0';
+  }
+}
+
+function setText(id, val) {
+  const el = document.getElementById(id); if(el) el.textContent = val;
+}
+
+/* ── Password change ── */
+function changePassword() {
+  const old = document.getElementById('f-old-pass').value;
+  const n = document.getElementById('f-new-pass').value;
+  const c = document.getElementById('f-confirm-pass').value;
+  const msg = document.getElementById('f-pass-msg');
+  const stored = load('password', DEFAULTS.password);
+  if(old !== stored){ msg.style.color='#e53935'; msg.textContent='Current password is incorrect.'; return; }
+  if(n.length < 6){ msg.style.color='#e53935'; msg.textContent='New password must be at least 6 characters.'; return; }
+  if(n !== c){ msg.style.color='#e53935'; msg.textContent='New passwords do not match.'; return; }
+  save('password', n);
+  msg.style.color='#8D9E6A'; msg.textContent='✓ Password updated successfully.';
+  document.getElementById('f-old-pass').value = '';
+  document.getElementById('f-new-pass').value = '';
+  document.getElementById('f-confirm-pass').value = '';
+}
+
+/* ── Reset all ── */
+function resetAll() {
+  if(!confirm('Reset ALL content to defaults? This cannot be undone.')) return;
+  const keys = ['heroBadge','heroTagline','rating','reviewCount','price','ctaReserveText','ctaReserveHref','ctaOrderText','ctaOrderHref','aboutText','highlights','menuItems','reviews','address','phoneDisplay','phoneHref','mapUrl','hours','bannerActive','bannerText','bannerBg','bannerColor'];
+  keys.forEach(k => localStorage.removeItem('cbae_' + k));
+  initDashboard();
+  applyAll();
+  const st = document.getElementById('adm-save-status');
+  st.textContent = '✓ Reset to defaults'; setTimeout(() => st.textContent = '', 3000);
+}
+
+/* ── One-time migration: reset stale cached values ── */
+try {
+  const op = localStorage.getItem('cbae_password');
+  if (op === '"cafebae2024"') localStorage.removeItem('cbae_password');
+  const om = localStorage.getItem('cbae_mapUrl');
+  if (om && om.includes('maps.google.com/maps?q=')) localStorage.removeItem('cbae_mapUrl');
+} catch(e) {}
+
+/* ── On page load: apply saved content ── */
+applyAll();
+</script>
+</body>
+</html>
